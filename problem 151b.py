@@ -8,7 +8,9 @@ def cut(sheet):
             sheet /= 2
         return tuple(tempsheets)
 
+
 variants = {}
+
 
 def get_single_num(a):
     result = 0.0
@@ -26,7 +28,6 @@ def get_single_num(a):
             if len(b) == 1:
                 result += 1.0
         variants[b] = result
-#    print(vars[a])
     return variants[b]
 
-print(get_single_num((16,))-2)
+print("{:.6f}".format(get_single_num((16,))-2))
