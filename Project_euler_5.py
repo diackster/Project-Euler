@@ -1,20 +1,10 @@
-import numpy as np
+r = range(2,21)
+result = 2
+for x in r:
+    if (result % x != 0):
+        for y in range(2,x+1):
+            if (result * y) % x == 0:
+                result *= y
+                break
 
-def divisible(number):
-    is_divisible = True
-    factors = np.array([2,3,5,7,11,13,17,19,20])
-    # for i in np.nditer(factors):
-    #     if number%i != 0:\
-    if np.array(number % factors).sum() > 0:
-        is_divisible = False
-    return is_divisible
-
-number = 100000000
-while not divisible(number):
-    number += 1
-    if number%1000000 == 0:
-        print(number)
-
-print(number)
-
-
+print(result)
